@@ -15,21 +15,21 @@ using namespace std;
 int findPlateIterative(const vector<string>& plates, const string& target) {
     for (int i = 0; i < plates.size(); i++) {
         if (plates[i] == target) {
-            return i;  // return position (index) of first match
+            return i;
         }
     }
-    return -1; // not found
+    return -1;
 }
 
 // Recurssive
 int findPlateRecursive(const vector<string>& plates, const string& target, int index = 0) {
    if (index >= plates.size()) {
-     return -1; // base case: not found
+     return -1;
    }
    if (plates[index] == target) {
-       return index; // found at current position
+       return index; 
    }
-   return findPlateRecursive(plates, target, index + 1); // helper continues
+   return findPlateRecursive(plates, target, index + 1); 
 }
 
 int main() 
