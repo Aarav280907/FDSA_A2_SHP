@@ -16,7 +16,6 @@ int binarySearchRecursive(const vector<int>& codes, int target, int left, int ri
         return -1;
     }
 
-    
     int mid = left + (right - left) / 2;
 
     if (codes[mid] == target) {

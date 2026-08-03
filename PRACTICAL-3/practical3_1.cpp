@@ -65,8 +65,8 @@ void insertionSort(vector<int>& marks) {
 }
 
 void printVector(const vector<int>& marks) {
-    for (int mark : marks) {
-        cout << mark << " ";
+    for (int i=0;i<marks.size();i++) {
+        cout << marks[i] << " ";
     }
     cout << endl;
 }
