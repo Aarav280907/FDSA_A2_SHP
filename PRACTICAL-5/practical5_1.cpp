@@ -130,20 +130,66 @@ public:
 
 int main() {
     Playlist playlist;
+    int choice;
+    string song;
+    string currentSong;
+    string newSong;
 
     cout << "--- Music Playlist Simulation ---\n";
 
-    playlist.addAtEnd("Aashiqui");
-    playlist.addAtEnd("Believer");
-    playlist.addAtBeginning("Intro");
-    playlist.insertAfterSong("Believer", "Closer");
-    playlist.removeFirstSong();
-    playlist.addAtEnd("Dhoom");
-    playlist.insertAfterSong("Aashiqui", "Electric Feel");
-    playlist.removeFirstSong();
+    do {
+        cout << "\n1. Add song at beginning\n";
+        cout << "2. Add song at end\n";
+        cout << "3. Insert song after another song\n";
+        cout << "4. Remove first song\n";
+        cout << "5. Display playlist\n";
+        cout << "6. Show song count\n";
+        cout << "0. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore();
 
-    cout << "\nFinal song count: " << playlist.getCount() << "\n";
-    playlist.displayFromFirstToLast();
+        switch (choice) {
+            case 1:
+                cout << "Enter song name: ";
+                getline(cin, song);
+                playlist.addAtBeginning(song);
+                break;
+
+            case 2:
+                cout << "Enter song name: ";
+                getline(cin, song);
+                playlist.addAtEnd(song);
+                break;
+
+            case 3:
+                cout << "Enter the existing song name: ";
+                getline(cin, currentSong);
+                cout << "Enter the new song name: ";
+                getline(cin, newSong);
+                playlist.insertAfterSong(currentSong, newSong);
+                break;
+
+            case 4:
+                playlist.removeFirstSong();
+                break;
+
+            case 5:
+                playlist.displayFromFirstToLast();
+                break;
+
+            case 6:
+                cout << "Total songs: " << playlist.getCount() << "\n";
+                break;
+
+            case 0:
+                cout << "Exiting playlist.\n";
+                break;
+
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 0);
 
     return 0;
 }
