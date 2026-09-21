@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct Node {
@@ -308,44 +309,71 @@ void printDoublyOperation(const string& label, DoublyCircularList& list) {
 int main() {
     SinglyCircularList singly;
     DoublyCircularList doubly;
+    int value;
+    int existingValue;
+    int newValue;
 
     cout << "--- Singly Circular Linked List ---";
-    singly.insertAtEnd(10);
-    printSinglyOperation("After join 10 at end", singly);
+    cout << "\nEnter a value to insert at the end: ";
+    cin >> value;
+    singly.insertAtEnd(value);
+    printSinglyOperation("After inserting at end", singly);
 
-    singly.insertAtEnd(20);
-    printSinglyOperation("After join 20 at end", singly);
+    cout << "\nEnter another value to insert at the end: ";
+    cin >> value;
+    singly.insertAtEnd(value);
+    printSinglyOperation("After inserting at end", singly);
 
-    singly.insertAtBeginning(5);
-    printSinglyOperation("After join 5 at beginning", singly);
+    cout << "\nEnter a value to insert at the beginning: ";
+    cin >> value;
+    singly.insertAtBeginning(value);
+    printSinglyOperation("After inserting at beginning", singly);
 
-    singly.insertAfterValue(10, 15);
-    printSinglyOperation("After join 15 after 10", singly);
+    cout << "\nEnter the existing value: ";
+    cin >> existingValue;
+    cout << "Enter the new value to insert after it: ";
+    cin >> newValue;
+    singly.insertAfterValue(existingValue, newValue);
+    printSinglyOperation("After inserting after existing value", singly);
 
     singly.deleteFirst();
     printSinglyOperation("After leave first student", singly);
 
-    singly.deleteByValue(15);
-    printSinglyOperation("After leave student 15", singly);
+    cout << "\nEnter a value to delete: ";
+    cin >> value;
+    singly.deleteByValue(value);
+    printSinglyOperation("After deleting value", singly);
 
     cout << "\n--- Doubly Circular Linked List ---";
-    doubly.insertAtEnd(30);
-    printDoublyOperation("After join 30 at end", doubly);
+    cout << "\nEnter a value to insert at the end: ";
+    cin >> value;
+    doubly.insertAtEnd(value);
+    printDoublyOperation("After inserting at end", doubly);
 
-    doubly.insertAtEnd(40);
-    printDoublyOperation("After join 40 at end", doubly);
+    cout << "\nEnter another value to insert at the end: ";
+    cin >> value;
+    doubly.insertAtEnd(value);
+    printDoublyOperation("After inserting at end", doubly);
 
-    doubly.insertAtBeginning(25);
-    printDoublyOperation("After join 25 at beginning", doubly);
+    cout << "\nEnter a value to insert at the beginning: ";
+    cin >> value;
+    doubly.insertAtBeginning(value);
+    printDoublyOperation("After inserting at beginning", doubly);
 
-    doubly.insertAfterValue(30, 35);
-    printDoublyOperation("After join 35 after 30", doubly);
+    cout << "\nEnter the existing value: ";
+    cin >> existingValue;
+    cout << "Enter the new value to insert after it: ";
+    cin >> newValue;
+    doubly.insertAfterValue(existingValue, newValue);
+    printDoublyOperation("After inserting after existing value", doubly);
 
     doubly.deleteFirst();
     printDoublyOperation("After leave first student", doubly);
 
-    doubly.deleteByValue(35);
-    printDoublyOperation("After leave student 35", doubly);
+    cout << "\nEnter a value to delete: ";
+    cin >> value;
+    doubly.deleteByValue(value);
+    printDoublyOperation("After deleting value", doubly);
 
     return 0;
 }
